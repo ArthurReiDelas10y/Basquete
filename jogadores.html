@@ -2,24 +2,25 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>Jogadores</title>
+<title>Início</title>
 <style>
-    html, body {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        overflow-x: hidden;
-        font-family: "Poppins", Arial, sans-serif;
-    }
+/* ======= RESET E BASE ======= */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+    font-family: "Poppins", Arial, sans-serif;
+}
 
-    body {
-        background: linear-gradient(180deg, #ff7e00, #ffb347, #000);
-        color: #222;
-        line-height: 2.0;
-        font-size: 20px;
-        position: relative;
-        z-index: 0;
-    }
+body {
+    background: linear-gradient(180deg, #ff7e00, #ffb347, #000);
+    color: #222;
+    line-height: 2;
+    font-size: 20px;
+    position: relative;
+    z-index: 0;
+}
 
 /* ======= HEADER ======= */
 header {
@@ -34,160 +35,118 @@ header {
     text-shadow: 0 2px 6px rgba(0,0,0,0.4);
 }
 
-
-    header {
-        background: linear-gradient(90deg, #000, #222);
-        color: #fff;
-        text-align: center;
-        padding: 40px 20px;
-        font-size: 40px;
-        font-weight: bold;
-        text-shadow: 0 2px 6px rgba(0,0,0,0.4);
-    }
-
-    }
-
-/* ======= HEADER ======= */
-header {
+/* ======= NAV ======= */
+nav {
     position: relative;
     z-index: 5;
-    background: linear-gradient(90deg, #000, #222);
-    color: #fff;
-    text-align: center;
-    padding: 40px 20px;
-    font-size: 40px;
-    font-weight: bold;
-    text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+    display: flex;
+    justify-content: center;
+    background: #111;
+    flex-wrap: wrap;
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.4);
 }
 
+nav a {
+    flex: 1;
+    max-width: 220px;
+    padding: 18px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-align: center;
+    border-radius: 10px;
+    margin: 10px 20px;
+}
 
-    nav {
-        display: flex;
-        justify-content: center;
-        background: #111;
-        flex-wrap: wrap;
-        padding: 15px 0;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.4);
-    }
+nav a:hover, nav a.active {
+    background: #ff7e00;
+    transform: scale(1.08);
+}
 
-    nav a {
-        flex: 1;
-        max-width: 220px;
-        padding: 18px;
-        color: white;
-        text-decoration: none;
-        font-weight: bold;
-        transition: all 0.3s ease;
-        text-align: center;
-        border-radius: 10px;
-        margin: 10px 20px;
-    }
+/* ======= MAIN ======= */
+main {
+    position: relative;
+    z-index: 5;
+    background: rgba(255, 255, 255, 0.4); /* mais transparente para fundo aparecer */
+    color: #111;
+    border-radius: 20px;
+    padding: 50px;
+    margin: 50px auto;
+    max-width: 900px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    backdrop-filter: blur(3px); /* menos blur, fundo mais visível */
+}
 
-    nav a:hover,
-    nav a.active {
-        background: #ff7e00;
-        color: #fff;
-        transform: scale(1.08);
-    }
+h2 {
+    font-size: 46px;
+    color: #ff7e00;
+    text-align: center;
+}
 
-    main {
-        background: rgba(255, 255, 255, 0.96);
-        color: #111;
-        border-radius: 20px;
-        padding: 50px;
-        margin: 50px auto;
-        max-width: 900px;
-        box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-        backdrop-filter: blur(6px);
-    }
+p {
+    text-align: justify;
+    margin: 25px 0;
+}
 
-    h2 {
-        font-size: 46px;
-        color: #ff7e00;
-        text-align: center;
-        margin-bottom: 30px;
-    }
+/* ======= FOOTER ======= */
+footer {
+    position: relative;
+    z-index: 5;
+    background: #111;
+    color: #ddd;
+    padding: 30px 10px;
+    font-size: 18px;
+    border-top: 3px solid #ff7e00;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
 
-    h3 {
-        font-size: 28px;
-        color: #ff7e00;
-        margin-top: 30px;
-        margin-bottom: 15px;
-        border-left: 5px solid #ff7e00;
-        padding-left: 15px;
-        text-shadow: 0 1px 3px rgba(0,0,0,0.2);
-        display: flex;
-        align-items: center;
-        gap: 12px;
-    }
+footer p {
+    margin: 5px 0;
+}
 
-    h3 img {
-        width: 130px; /* aumentei o tamanho das imagens */
-        height: auto;
-        border-radius: 10px;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-        transition: transform 0.3s ease;
-    }
+/* ======== FUNDO ANIMADO ======== */
+.emoji-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
 
-    h3 img:hover {
-        transform: scale(1.05);
-    }
+.emoji-bg span {
+    position: absolute;
+    bottom: -10vh;
+    left: calc(var(--x) * 1%);
+    font-size: calc(24px + var(--s) * 12px);
+    opacity: calc(0.5 + var(--o) * 0.5); /* mais visível */
+    animation: ballUp calc(9s + var(--t) * 5s) linear infinite;
+    animation-delay: calc(var(--d) * -3s);
+    transform: translateY(0) rotate(0deg);
+    filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.5)); /* destaque */
+}
 
-    p {
-        margin-bottom: 20px;
-        line-height: 1.8;
-    }
-
-    footer {
-        background: #111;
-        color: #ddd;
-        padding: 30px 10px;
-        font-size: 18px;
-        border-top: 3px solid #ff7e00;
-        margin-top: 50px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        flex-direction: column;
-    }
-
-    footer p { margin: 5px 0; }
-
-    .emoji-bg {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        overflow: hidden;
-        z-index: 1;
-    }
-
-    .emoji-bg span {
-        position: absolute;
-        bottom: -10vh;
-        left: calc(var(--x) * 1%);
-        font-size: calc(24px + var(--s) * 12px);
-        opacity: calc(0.25 + var(--o) * 0.4);
-        animation: ballUp calc(9s + var(--t) * 5s) linear infinite;
-        animation-delay: calc(var(--d) * -3s);
-        transform: translateY(0) rotate(0deg);
-        filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.3));
-    }
-
-    @keyframes ballUp {
-        0% { transform: translateY(0) rotate(0deg) scale(1); opacity: 0.9; }
-        70% { transform: translateY(-90vh) rotate(360deg) scale(1.1); opacity: 0.8; }
-        100% { transform: translateY(-120vh) rotate(720deg) scale(0.9); opacity: 0; }
-    }
+@keyframes ballUp {
+    0% { transform: translateY(0) rotate(0deg) scale(1); opacity: 0.9; }
+    70% { transform: translateY(-90vh) rotate(360deg) scale(1.1); opacity: 0.8; }
+    100% { transform: translateY(-120vh) rotate(720deg) scale(0.9); opacity: 0; }
+}
 </style>
 </head>
 <body>
 
+<!-- Fundo animado -->
 <div class="emoji-bg" aria-hidden="true">
-    <span style="--x:2; --s:1; --t:0; --d:0; --o:0.5;">🏀</span>
+<span style="--x:2; --s:1; --t:0; --d:0; --o:0.5;">🏀</span>
     <span style="--x:8; --s:0.9; --t:1; --d:1; --o:0.8;">🏀</span>
     <span style="--x:12; --s:1.2; --t:2; --d:2; --o:0.9;">🏀</span>
     <span style="--x:18; --s:0.8; --t:3; --d:3; --o:0.7;">🏀</span>
@@ -214,6 +173,7 @@ header {
     <span style="--x:30; --s:0.9; --t:1; --d:2; --o:0.6;">🏀</span>
     <span style="--x:60; --s:1; --t:3; --d:1; --o:0.7;">🏀</span>
     <span style="--x:80; --s:1.1; --t:0; --d:4; --o:0.8;">🏀</span>
+
 </div>
     
 <header>🏀 Lendas da NBA</header>
